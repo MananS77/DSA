@@ -36,7 +36,7 @@ Variables
 Time and Space - O(N)   
 */
 
-public class Main {
+public class Turnstile {
     
     public static int[] getTimes(int numCustomers, int[] arrTime, int[] direction) {
 
