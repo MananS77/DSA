@@ -11,9 +11,9 @@ Approach -
     
 Time - 
     1. To build graph - O(N) where N = number of PairString items in input
-    2. To perform DFS - O(M) where M = number of unique items in input
+    2. To perform DFS - O(V + E) where V = number of unique items in input (vertices) and E = number of associations (edge)
     2. To sort the output list - O(L Log L) where L = number of connected components
-    Total = O(N + M + L Log L) time
+    Total = O(N + V + E + L Log L) time
 
 Space - 
     1. To hold graph - O(M) where M = number of unique items in input
