@@ -1,7 +1,6 @@
 package amazon.oa;
 
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 
 public class FiveStarSellers {
@@ -20,19 +19,20 @@ public class FiveStarSellers {
         }
     );
 
-    for(int[] rating : productRatings) {
+    for (int[] rating : productRatings) {
       currentRating += (double) rating[0] / (double) rating[1];
       queue.offer(new double[]{rating[0], rating[1]});
     }
 
     currentRating /= numProducts;
 
-    if(currentRating >= threshold)
+    if (currentRating >= threshold) {
       return 0;
+    }
 
     int count = 0;
 
-    while(!queue.isEmpty() && currentRating < threshold) {
+    while (!queue.isEmpty() && currentRating < threshold) {
       double[] cur = queue.poll();
       double[] plusOneToCur = {cur[0] + 1, cur[1] + 1};
 

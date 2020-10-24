@@ -13,16 +13,6 @@ import java.util.Queue;
 
 public class TreasureIsland {
 
-  static class Point {
-    int x;
-    int y;
-
-    public Point(int x, int y) {
-      this.x = x;
-      this.y = y;
-    }
-  }
-
   private static int minSteps(char[][] grid) {
     int minSteps = 1;
 
@@ -32,17 +22,19 @@ public class TreasureIsland {
 
     int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
-    while(!queue.isEmpty()) {
+    while (!queue.isEmpty()) {
       int size = queue.size();
-      while(size-- > 0) {
+      while (size-- > 0) {
         Point point = queue.poll();
 
-        for(int[] dir : directions) {
+        for (int[] dir : directions) {
           int i = dir[0] + point.x;
           int j = dir[1] + point.y;
 
-          if(isInside(i, j, grid) && grid[i][j] != 'D') {
-            if(grid[i][j] == 'X') return minSteps;
+          if (isInside(i, j, grid) && grid[i][j] != 'D') {
+            if (grid[i][j] == 'X') {
+              return minSteps;
+            }
             queue.offer(new Point(i, j));
             grid[i][j] = 'D';
           }
@@ -60,20 +52,22 @@ public class TreasureIsland {
     Queue<Point> queue = collectSources(grid);
     int[][] directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
-    while(!queue.isEmpty()) {
+    while (!queue.isEmpty()) {
       int size = queue.size();
 
-      while(size-- > 0) {
+      while (size-- > 0) {
         Point point = queue.poll();
         //if(grid[point.x][point.y] == 'X') return minDist;
         //grid[point.x][point.y] = 'D';
 
-        for(int[] dir : directions) {
+        for (int[] dir : directions) {
           int i = dir[0] + point.x;
           int j = dir[1] + point.y;
 
-          if(isInside(i, j, grid) && grid[i][j] != 'D') {
-            if(grid[i][j] == 'X') return minDist;
+          if (isInside(i, j, grid) && grid[i][j] != 'D') {
+            if (grid[i][j] == 'X') {
+              return minDist;
+            }
             queue.offer(new Point(i, j));
             grid[i][j] = 'D';
           }
@@ -88,10 +82,11 @@ public class TreasureIsland {
   private static Queue<Point> collectSources(char[][] grid) {
     Queue<Point> queue = new LinkedList<>();
 
-    for(int i = 0 ; i < grid.length ; i++) {
-      for(int j = 0 ; j < grid[i].length ; j++) {
-        if(grid[i][j] == 'S')
+    for (int i = 0; i < grid.length; i++) {
+      for (int j = 0; j < grid[i].length; j++) {
+        if (grid[i][j] == 'S') {
           queue.offer(new Point(i, j));
+        }
       }
     }
 
@@ -126,5 +121,16 @@ public class TreasureIsland {
     System.out.println(
         String.format("Minimum steps to reach treasure = %d \n" +
             "Is this answer correct - %b", minDist, minDist == 3));
+  }
+
+  static class Point {
+
+    int x;
+    int y;
+
+    public Point(int x, int y) {
+      this.x = x;
+      this.y = y;
+    }
   }
 }

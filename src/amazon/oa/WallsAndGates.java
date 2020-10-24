@@ -95,14 +95,17 @@ public class WallsAndGates {
         {2147483647, -1, 2147483647, -1},
         {0, -1, 2147483647, 2147483647},
     };
-    System.out.println("Before - ");print(rooms);
+    System.out.println("Before - ");
+    print(rooms);
     wallsAndGates(rooms);
     System.out.println();
-    System.out.println("After - ");print(rooms);
+    System.out.println("After - ");
+    print(rooms);
   }
 
   private static void print(int[][] rooms) {
-    for(int[] room : rooms)
+    for (int[] room : rooms) {
       System.out.println(Arrays.toString(room));
+    }
   }
 }
