@@ -1,4 +1,4 @@
-/*
+package amazon.oa;/*
 Question - 
     https://leetcode.com/discuss/interview-question/853053/
     https://leetcode.com/discuss/interview-question/699973/Goldman-Sachs-or-OA-or-Turnstile
@@ -35,6 +35,14 @@ Variables
     
 Time and Space - O(N)   
 */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 public class Turnstile {
 
