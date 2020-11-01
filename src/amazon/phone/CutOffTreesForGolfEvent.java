@@ -6,6 +6,12 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/*
+* Problem - https://leetcode.com/problems/cut-off-trees-for-golf-event/
+* Time -  O(m^2 * n^2) -> (m * n) trees and for each tree BFS costs (m * n) time
+* Space - O(m * n) -> Queue could hold (m * n) trees
+* */
+
 public class CutOffTreesForGolfEvent {
 
   static int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
